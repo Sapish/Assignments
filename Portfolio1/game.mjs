@@ -99,13 +99,13 @@ console.log(drawWordDisplay());
 console.log(drawList(wrongGuesses, ANSI.COLOR.RED));
 console.log(HANGMAN_UI[wrongGuesses.length]);
 
-const youWin = (PLAYER_TEXT.YOU_WIN);
+
 if (wasGuessCorrect) {
-    console.log(ANSI.COLOR.YELLOW + youWin);
-}
+    console.log(ANSI.COLOR.YELLOW + PLAYER_TEXT.YOU_WIN);
+} else {
 console.log(PLAYER_TEXT.YOU_LOSE);
 process.exit();
-
+}
 function ifPlayerGuessedLetter(answer) {
     return answer.length == 1
 }
