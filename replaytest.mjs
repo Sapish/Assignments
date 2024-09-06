@@ -14,8 +14,11 @@ const PLAYER_TEXT_OUTPUT = {
     YOU_WIN: "You won, good job!",
     YOU_LOSE: "You lost, try again!",
     MAKE_CHOICE: "Choose either a word or a letter: ",
+    REPLAY: "Do you want to play again, then type [replay]. Do you want to quit, type [exit]: "
 };
 
+let playAgain = true;
+while(playAgain) {
 let correctWord = RANDOM_WORDS[Math.floor(Math.random() * RANDOM_WORDS.length)].toLowerCase();
 let numberOfCharInWord = correctWord.length;
 let guessedWord = "".padStart(correctWord.length, "_"); 
@@ -27,6 +30,7 @@ let wrongGuesses = [];
 let totalGuesses = 0;
 let correctGuesses = 0;
 let incorrectGuesses = 0;
+
 
 function drawWordDisplay() {
 
@@ -60,6 +64,19 @@ function showStats() {
     console.log(`Correct guesses: ${correctGuesses}`);
     console.log(`Incorrect guesses: ${incorrectGuesses}`);
     console.log(ANSI.RESET);
+}
+let playAgain = true;
+while (playAgain) {
+    correctWord = RANDOM_WORDS[Math.floor(Math.random() * RANDOM_WORDS.length)].toLowerCase();
+    numberOfCharInWord = correctWord.length;
+    guessedWord = "".padStart(correctWord.length,"_");
+    wordDisplay = "";
+    isGameOver = false;
+    wasGuessCorrect = false;
+    wrongGuesses = [];
+    totalGuesses = 0;
+    correctGuesses = 0;
+    incorrectGuesses = 0;
 }
 
 
@@ -132,8 +149,17 @@ console.log(HANGMAN_UI[wrongGuesses.length]);
 
 showStats();
 
+const replayChoice = (await askQuestion(PLAYER_TEXT_OUTPUT.REPLAY)).toLowerCase();
+
+if (replayChoice !== 'replay') {
+    playAgain = false;
+    }
+}
+
 process.exit();
 
 function ifPlayerGuessedLetter(answer) {
     return answer.length == 1
 }
+
+
