@@ -104,7 +104,8 @@ for (let i = people.length - 1; i >= 0; i--) {
     Declare a variable for a list of phone numbers. Your list should have at least 3 numbers. 
 */
 console.log("Task: F");
-
+const phoneNumbers = ["+47 827 63 627", "+47 526 43 980", "+47 829 00 132"];
+console.log(phoneNumbers);
 
 /*
     Task: G
