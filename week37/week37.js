@@ -123,4 +123,8 @@ console.log(lastNumberInList);
 */
 console.log("Task: H");
 
-let peopleNames = [["Christian", "Simonsen"], ["Tony", "Bergholtz"]]
+let peopleNames = [["Christian", "Simonsen"], ["Tony", "Bergholtz"]];
+
+for (let i = 0; i < peopleNames.length; i++) {
+    console.log(peopleNames[i][1]);
+};
