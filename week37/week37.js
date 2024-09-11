@@ -113,6 +113,10 @@ console.log(phoneNumbers);
 */
 console.log("Task: G");
 
+const phoneNumbers = ["+47 827 63 627", "+47 526 43 980", "+47 829 00 132"];
+const lastNumberInList = phoneNumbers[phoneNumbers.length - 1];
+console.log(lastNumberInList);
+
 /*
     Task: H
     Print only the last names of the people in the list, using a loop.
