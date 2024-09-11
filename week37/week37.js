@@ -62,6 +62,13 @@ console.log("No more bottles of soda on the shelf");
 */
 console.log("Task: C");
 
+let peopleInRoom = 37;
+const PI = Math.PI;
+const gravity = 9.81;
+
+console.log(peopleInRoom);
+console.log(PI);
+console.log(gravity);
 
 
 /*
@@ -70,7 +77,9 @@ console.log("Task: C");
 */
 console.log("Task: D");
 
-// write your function here.
+function add (a, b) {
+    return a + b;
+};
 
 
 
