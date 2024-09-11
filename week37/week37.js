@@ -93,7 +93,11 @@ console.log("5673 + 234 = " + add(5673, 234));
 */
 console.log("Task: E");
 
+const people = ["Tony", "Christian", "Håkon"];
 
+for (let i = people.length - 1; i >= 0; i--) {
+    console.log(people[i]);
+}
 
 /*
     Task: F
