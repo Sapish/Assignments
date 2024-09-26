@@ -86,10 +86,14 @@ console.log("Differanse: ", differans);
 console.log("Task: D");
 
 function differansier(liste) {
-
-    /* What should go here?? */
+    let result = liste[0];
+    for (let i = 1; i < liste.length; i++) {
+        result -= liste[i];
+    }
+    return result;
 }
 
+const andreTall = [18, 14, 32, 73, 21, 98];
 const diff = differansier(andreTall);
 
 if (diff === -18) {
