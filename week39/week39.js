@@ -47,10 +47,10 @@ console.log("Task: B");
 
 function summer(liste) {
 
-    /* What should go here?? */
-
+    return liste.reduce((sum, current) => sum + current, 0);
 }
 
+const tall = [1, 2, 3, 4, 5];
 const sum = summer(tall);
 
 if (sum === 15) {
