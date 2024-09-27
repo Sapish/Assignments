@@ -108,3 +108,11 @@ if (diff === -18) {
     Create a function named "multipliser." This function should take (as a parameter) a list of numbers.
     The function should return the product of the numbers (i.e., tal1 * tal2 * tal3 * ... and so on).
 */
+
+function multipliser(numbers) {
+    return numbers.reduce((product, number) => product * number, 1);
+}
+
+const numbersList = [3, 6, 9, 12];
+const product = multipliser(numbersList);
+console.log(product);
