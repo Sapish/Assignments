@@ -92,7 +92,7 @@ async function playGame() {
         clearScreen();
         showGameBoardWithCurrentState();
         showHUD();
-        let move = await getGameMoveFromtCurrentPlayer();
+        let move = await getGameMoveFromCurrentPlayer();
         updateGameBoardState(move);
         outcome = evaluateGameState();
         changeCurrentPlayer();
@@ -163,7 +163,7 @@ function updateGameBoardState(move) {
     gameboard[move[ROW_ID]][move[COLUMN_ID]] = currentPlayer;
 }
 
-async function getGameMoveFromtCurrentPlayer() {
+async function getGameMoveFromCurrentPlayer() {
     let position = null;
     do {
         let rawInput = await askQuestion("Place your mark at: ");
@@ -210,9 +210,9 @@ function showGameBoardWithCurrentState() {
                 rowOutput += "_ ";
             }
             else if (cell > 0) {
-                rowOutput += "X ";
+                rowOutput += ANSI.COLOR.GREEN + "X " + ANSI.RESET;
             } else {
-                rowOutput += "O  ";
+                rowOutput += ANSI.COLOR.RED + "O  " + ANSI.RESET;
             }
         }
 
