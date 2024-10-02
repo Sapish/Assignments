@@ -85,6 +85,25 @@ async function showMenu() {
     return choice;
 }
 
+async function showSettingsMenu() {
+    let choice = -1;
+    let validChoice = false;
+
+    while (!validChoice) {
+        clearScreen();
+        print(ANSI.COLOR.YELLOW + "SETTINGS" + ANSI.RESET);
+        print("1. Language");
+        print("2. Back to Main Menu");
+
+        choice = await askQuestion("");
+
+        if ([1, 2].includes(Number(choice))) {
+
+        }
+    }
+    return choice;
+}
+
 async function playGame() {
     // Play game..
     let outcome;
