@@ -168,12 +168,12 @@ async function getGameMoveFromtCurrentPlayer() {
     do {
         let rawInput = await askQuestion("Place your mark at: ");
         position = rawInput.split(" ");
-    } while (isValidPositionOnBoard(position) == false)
+    } while (isPositionValidOnBoard(position) == false)
     
     return [position[0] - 1, position[1] - 1];
 }
 
-function isValidPositionOnBoard(position) {
+function isPositionValidOnBoard(position) {
 
     if (position.length < 2) {
         // We were not given two numbers or more.
