@@ -40,7 +40,12 @@ async function start() {
         if (chosenAction == MENU_CHOICES.MENU_CHOICE_START_GAME) {
             await runGame();
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS) {
-            ///TODO: Needs implementing
+            let settingsChoice = await showSettingsMenu();
+            if (settingsChoice == 1) {
+                language = DICTIONARY.no
+            } else if (settingsChoice == 2) {
+                
+            }
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_EXIT_GAME) {
             clearScreen();
             process.exit();
