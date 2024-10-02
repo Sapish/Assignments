@@ -16,11 +16,3 @@ Everything you need to complete this assignment is demonstrated in the provided 
 
 Remember to solve one thing at a time: start by understanding the problem, make it work, then make it "pretty".   
 If you create a bug, do not move on to something new, stick with it. Chances are, if you don't, you'll just create another bug elsewhere in the code, making it more complex to fix.
-
-
-# "Harder" (Extra) Challenges
-These are optional, and you should only attempt them once you've completed the other challenges. Solving them may require additional research. Do one, do all, or none at all—it's completely your decision.
-
-* Remember the language choice between sessions (i.e., across restarts of the program).
-* Center the splash screen graphics in the terminal window (Hint: `process.stdout.columns`).
-* Implement the Minimax algorithm for your computer player.
