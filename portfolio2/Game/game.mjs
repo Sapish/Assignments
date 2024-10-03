@@ -152,6 +152,7 @@ function evaluateGameState() {
     let winner = 0;
     let sum = 0;
     let state = 0;
+    let gameDraw = true;
 
     for (let row = 0; row < GAME_BOARD_SIZE; row++) {
 
@@ -195,6 +196,18 @@ function evaluateGameState() {
         winner = sum / 3;
     }
 
+    for (let row = 0; row < GAME_BOARD_SIZE; row++) {
+        for (let col = 0; col < GAME_BOARD_SIZE; col++) {
+            if (gameboard[row][col] === 0) {
+                gameDraw = false;
+                break;
+            }
+        }
+    }
+    if (gameDraw && winner === 0) {
+        return -2;
+    }
+    
     return winner;
 }
 
