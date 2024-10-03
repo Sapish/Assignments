@@ -138,8 +138,13 @@ async function askWantToPlayAgain() {
 
 function showGameSummary(outcome) {
     clearScreen();
-    let winningPlayer = (outcome > 0) ? 1 : 2;
-    print("Winner is player " + winningPlayer);
+
+    if (outcome === -2) {
+        print("Its a draw!");
+    } else {
+        let winningPlayer = (outcome > 0) ? 1 : 2;
+        print("Winner is player " + winningPlayer);
+    }
     showGameBoardWithCurrentState();
     print("GAME OVER");
 }
