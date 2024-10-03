@@ -178,7 +178,23 @@ function evaluateGameState() {
         sum = 0;
     }
 
-    let winner = state / 3;
+    for (let i = 0; i < GAME_BOARD_SIZE; i++) {
+        sum += gameboard[i][i];
+    }
+
+    if (Math.abs(sum) === 3) {
+        winner = sum / 3;
+    }
+
+    sum = 0;
+    for (let i = 0; i < GAME_BOARD_SIZE; i++) {
+        sum += gameboard[i][GAME_BOARD_SIZE - 1 - i];
+    }
+
+    if (Math.abs(sum) === 3) {
+        winner = sum / 3;
+    }
+
     return winner;
 }
 
