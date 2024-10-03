@@ -194,10 +194,11 @@ if (winner === 0) {
         }
     }
 }
+if (winner === 0) {
+    sum = 0;
     for (let i = 0; i < GAME_BOARD_SIZE; i++) {
         sum += gameboard[i][i];
     }
-
     if (Math.abs(sum) === 3) {
         winner = sum / 3;
     }
@@ -209,8 +210,8 @@ if (winner === 0) {
 
     if (Math.abs(sum) === 3) {
         winner = sum / 3;
+      }
     }
-
     return winner;
 }
 
