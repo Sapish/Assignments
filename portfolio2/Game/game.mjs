@@ -44,7 +44,7 @@ async function start() {
             if (settingsChoice == 1) {
                 language = DICTIONARY.no
             } else if (settingsChoice == 2) {
-                
+
             }
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_EXIT_GAME) {
             clearScreen();
@@ -149,6 +149,7 @@ function changeCurrentPlayer() {
 }
 
 function evaluateGameState() {
+    let winner = 0;
     let sum = 0;
     let state = 0;
 
