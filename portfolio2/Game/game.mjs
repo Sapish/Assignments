@@ -156,7 +156,6 @@ function changeCurrentPlayer() {
 function evaluateGameState() {
     let winner = 0;
     let sum = 0;
-    let state = 0;
     let gameDraw = true;
 
     for (let row = 0; row < GAME_BOARD_SIZE; row++) {
@@ -172,30 +171,29 @@ function evaluateGameState() {
     }
 
     for (let row = 0; row < GAME_BOARD_SIZE; row++) {
-
+        sum = 0;
         for (let col = 0; col < GAME_BOARD_SIZE; col++) {
             sum += gameboard[row][col];
         }
 
         if (Math.abs(sum) == 3) {
-            state = sum;
+            winner = sum / 3;
+            break;
         }
-        sum = 0;
     }
 
+if (winner === 0) {
     for (let col = 0; col < GAME_BOARD_SIZE; col++) {
-
+        sum = 0;
         for (let row = 0; row < GAME_BOARD_SIZE; row++) {
             sum += gameboard[row][col];
         }
-
-        if (Math.abs(sum) == 3) {
-            state = sum;
+        if (Math.abs(sum) === 3) {
+            winner = sum / 3;
+            break;
         }
-
-        sum = 0;
     }
-
+}
     for (let i = 0; i < GAME_BOARD_SIZE; i++) {
         sum += gameboard[i][i];
     }
