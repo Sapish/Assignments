@@ -74,9 +74,9 @@ async function showMenu() {
         // Display our menu to the player.
         clearScreen();
         print(ANSI.COLOR.YELLOW + "MENU" + ANSI.RESET);
-        print("1. Play Game");
-        print("2. Settings");
-        print("3. Exit Game");
+        print(`${DICTIONARY[language].MENU_CHOICE_START_GAME}`);
+        print(`${DICTIONARY[language].MENU_CHOICE_SHOW_SETTINGS}`);
+        print(`${DICTIONARY[language].MENU_CHOICE_EXIT_GAME}`);
 
         // Wait for the choice.
         choice = await askQuestion("");
@@ -97,8 +97,8 @@ async function showSettingsMenu() {
     while (!validChoice) {
         clearScreen();
         print(ANSI.COLOR.YELLOW + "SETTINGS" + ANSI.RESET);
-        print("1. Language");
-        print("2. Back to Main Menu");
+        print(`${DICTIONARY[language].SETTINGS_MENU_CHOICE_LANGUAGE}`);
+        print(`${DICTIONARY[language].SETTINGS_MENU_CHOICE_BACK}`);
 
         choice = await askQuestion("");
 
@@ -128,7 +128,7 @@ async function playGame() {
 }
 
 async function askWantToPlayAgain() {
-    let answer = await askQuestion(language.PLAY_AGAIN_QUESTION);
+    let answer = await askQuestion(`${DICTIONARY[language].PLAY_AGAIN_QUESTION}`);
     let playAgain = true;
     if (answer && answer.toLowerCase()[0] != language.CONFIRM) {
         playAgain = false;
@@ -140,10 +140,10 @@ function showGameSummary(outcome) {
     clearScreen();
 
     if (outcome === -2) {
-        print("Its a draw!");
+        print(`${DICTIONARY[language].GAME_DRAW}`);
     } else {
         let winningPlayer = (outcome > 0) ? 1 : 2;
-        print("Winner is player " + winningPlayer);
+        print(`${DICTIONARY[language].WINNER_PLAYER} ${winningPlayer}`);
     }
     showGameBoardWithCurrentState();
     print("GAME OVER");
