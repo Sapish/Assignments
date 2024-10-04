@@ -10,14 +10,14 @@ const DICTIONARY = {
         SETTINGS_MENU_CHOICE_BACK: "Back to Main Menu",
     },
     no: {
-        PLAY_AGAIN_QUESTION: "Spille en gang til (Ja/nei)? ",
+        PLAY_AGAIN_QUESTION: "Spill en gang til (Ja/nei)? ",
         CONFIRM: "j",
         MENU_CHOICE_START_GAME: "Start Spill",
         MENU_CHOICE_SHOW_SETTINGS: "Innstillinger",
         MENU_CHOICE_EXIT_GAME: "Avslutt Spill",
         SETTINGS_MENU_CHOICE_LANGUAGE: "Språk alternativer",
         SETTINGS_MENU_CHOICE_BACK: "Tilbake til hovedmeny",
-    }
+    },
 }
 
 export default DICTIONARY;
