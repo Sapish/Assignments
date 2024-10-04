@@ -77,6 +77,7 @@ async function showMenu() {
         print("1. Play Game");
         print("2. Settings");
         print("3. Exit Game");
+        print("4. Player vs computer");
 
         // Wait for the choice.
         choice = await askQuestion("");
