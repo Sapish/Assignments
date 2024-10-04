@@ -128,6 +128,23 @@ async function playGame() {
     return await askWantToPlayAgain();
 }
 
+function getAiMove() {
+    for (let row = 0; row < GAME_BOARD_SIZE; row++) {
+        for (let col = 0; col < GAME_BOARD_SIZE; col++) {
+            if (gameboard[row][col] === 0) {
+                gameboard[row][col] = PLAYER_2;
+                if (evaluateGameState() === PLAYER_2) {
+                    gameboard[row][col] = 0;
+                    return [row][col];
+                }
+                gameboard[row][col] = 0;
+            }
+        }
+    }
+}
+
+
+
 async function askWantToPlayAgain() {
     let answer = await askQuestion(language.PLAY_AGAIN_QUESTION);
     let playAgain = true;
