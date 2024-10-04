@@ -113,18 +113,25 @@ async function showSettingsMenu() {
     return choice;
 }
 
-async function playGame() {
+async function playGame(isAi = false) {
     // Play game..
     let outcome;
     do {
         clearScreen();
         showGameBoardWithCurrentState();
         showHUD();
+
+        if (currentPlayer === PLAYER_2 && isAi) {
+            const aiMove = getAiMove();
+            updateGameBoardState(aiMove);
+        } else {
         let move = await getGameMoveFromCurrentPlayer();
         updateGameBoardState(move);
         outcome = evaluateGameState();
-        changeCurrentPlayer();
-    } while (outcome == 0)
+        }
+        
+      changeCurrentPlayer();
+    } while (outcome == 0);
 
     showGameSummary(outcome);
 
