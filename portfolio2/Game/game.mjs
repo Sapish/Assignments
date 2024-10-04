@@ -86,6 +86,9 @@ async function showMenu() {
         if ([MENU_CHOICES.MENU_CHOICE_START_GAME, MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS, MENU_CHOICES.MENU_CHOICE_EXIT_GAME].includes(Number(choice))) {
             validChoice = true;
         }
+        if (choice === 4) {
+            await runGame(true);
+        }
     }
 
     return choice;
