@@ -74,9 +74,9 @@ async function showMenu() {
         // Display our menu to the player.
         clearScreen();
         print(ANSI.COLOR.YELLOW + "MENU" + ANSI.RESET);
-        print(`${DICTIONARY[language].MENU_CHOICE_START_GAME}`);
-        print(`${DICTIONARY[language].MENU_CHOICE_SHOW_SETTINGS}`);
-        print(`${DICTIONARY[language].MENU_CHOICE_EXIT_GAME}`);
+        print("1. Play Game");
+        print("2. Settings");
+        print("3. Exit Game");
 
         // Wait for the choice.
         choice = await askQuestion("");
@@ -97,8 +97,8 @@ async function showSettingsMenu() {
     while (!validChoice) {
         clearScreen();
         print(ANSI.COLOR.YELLOW + "SETTINGS" + ANSI.RESET);
-        print(`${DICTIONARY[language].SETTINGS_MENU_CHOICE_LANGUAGE}`);
-        print(`${DICTIONARY[language].SETTINGS_MENU_CHOICE_BACK}`);
+        print("1. Language");
+        print("2. Back to Main Menu");
 
         choice = await askQuestion("");
 
@@ -128,7 +128,7 @@ async function playGame() {
 }
 
 async function askWantToPlayAgain() {
-    let answer = await askQuestion(`${DICTIONARY[language].PLAY_AGAIN_QUESTION}`);
+    let answer = await askQuestion(language.PLAY_AGAIN_QUESTION);
     let playAgain = true;
     if (answer && answer.toLowerCase()[0] != language.CONFIRM) {
         playAgain = false;
@@ -140,10 +140,10 @@ function showGameSummary(outcome) {
     clearScreen();
 
     if (outcome === -2) {
-        print(`${DICTIONARY[language].GAME_DRAW}`);
+        print("Its a draw");
     } else {
         let winningPlayer = (outcome > 0) ? 1 : 2;
-        print(`${DICTIONARY[language].WINNER_PLAYER} ${winningPlayer}`);
+        print("Winner is player " + winningPlayer);
     }
     showGameBoardWithCurrentState();
     print("GAME OVER");
@@ -252,25 +252,26 @@ function isPositionValidOnBoard(position) {
 }
 
 function showHUD() {
-    let playerDescription = "one";
+    let playerDescription = "one (X)";
     if (PLAYER_2 == currentPlayer) {
-        playerDescription = "two";
+        playerDescription = "two (O)";
     }
-    print("Player " + playerDescription + " it is your turn");
+    print("Player " + playerDescription + " it's is your turn");
 }
 
 function showGameBoardWithCurrentState() {
+    
     for (let currentRow = 0; currentRow < GAME_BOARD_SIZE; currentRow++) {
         let rowOutput = "";
         for (let currentCol = 0; currentCol < GAME_BOARD_SIZE; currentCol++) {
             let cell = gameboard[currentRow][currentCol];
             if (cell == 0) {
-                rowOutput += "_ ";
+                rowOutput += "[_] ";
             }
             else if (cell > 0) {
-                rowOutput += ANSI.COLOR.GREEN + "X " + ANSI.RESET;
+                rowOutput += ANSI.COLOR.GREEN + "[X] " + ANSI.RESET;
             } else {
-                rowOutput += ANSI.COLOR.RED + "O  " + ANSI.RESET;
+                rowOutput += ANSI.COLOR.RED + "[O] " + ANSI.RESET;
             }
         }
 
