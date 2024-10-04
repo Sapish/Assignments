@@ -141,9 +141,32 @@ function getAiMove() {
             }
         }
     }
+
+
+for (let row = 0; row < GAME_BOARD_SIZE; row++) {
+    for (let col = 0; col < GAME_BOARD_SIZE; col++) {
+        if (gameboard[row][col] === 0) {
+            gameboard[row][col] = PLAYER_1;
+            if (evaluateGameState() === PLAYER_1) {
+                gameboard[row][col] = 0;
+                return [row][col];
+            }
+            gameboard[row][col] = 0;
+        }
+    }
 }
 
-
+const availableMoves = [];
+for (let row = 0; row < GAME_BOARD_SIZE; row++) {
+    for (let col = 0; col < GAME_BOARD_SIZE; col++) {
+        if (gameboard[row][col] === 0) {
+            availableMoves.push([row, col]);
+            }
+        }
+    }
+    const randomIndex = Math.floor(Math.random() * availableMoves.length);
+    return availableMoves[randomIndex];
+}
 
 async function askWantToPlayAgain() {
     let answer = await askQuestion(language.PLAY_AGAIN_QUESTION);
