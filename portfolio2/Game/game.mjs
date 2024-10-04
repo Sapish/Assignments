@@ -1,5 +1,4 @@
 import { print, askQuestion } from "./io.mjs"
-import { debug, DEBUG_LEVELS } from "./debug.mjs";
 import { ANSI } from "./ansi.mjs";
 import DICTIONARY from "./language.mjs";
 import showSplashScreen from "./splash.mjs";
@@ -24,7 +23,7 @@ let currentPlayer;
 
 clearScreen();
 showSplashScreen();
-setTimeout(start, 2500); // This waites 2.5seconds before calling the function. i.e. we get to see the splash screen for 2.5 seconds before the menue takes over. 
+setTimeout(start, 2500); // This waits 2.5seconds before calling the function. i.e. we get to see the splash screen for 2.5 seconds before the menue takes over. 
 
 
 
@@ -85,8 +84,12 @@ async function showMenu() {
         // Check to see if the choice is valid.
         if ([MENU_CHOICES.MENU_CHOICE_START_GAME, MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS, MENU_CHOICES.MENU_CHOICE_EXIT_GAME].includes(Number(choice))) {
             validChoice = true;
+        } else if (choice === 4) {
+            validChoice = true;
         }
-        if (choice === 4) {
+        if (choice === 1) {
+            await runGame(false);
+        } else if (choice === 4) {
             await runGame(true);
         }
     }
@@ -129,7 +132,7 @@ async function playGame(isAi = false) {
         updateGameBoardState(move);
         outcome = evaluateGameState();
         }
-        
+
       changeCurrentPlayer();
     } while (outcome == 0);
 
@@ -145,7 +148,7 @@ function getAiMove() {
                 gameboard[row][col] = PLAYER_2;
                 if (evaluateGameState() === PLAYER_2) {
                     gameboard[row][col] = 0;
-                    return [row][col];
+                    return [row, col];
                 }
                 gameboard[row][col] = 0;
             }
@@ -159,7 +162,7 @@ for (let row = 0; row < GAME_BOARD_SIZE; row++) {
             gameboard[row][col] = PLAYER_1;
             if (evaluateGameState() === PLAYER_1) {
                 gameboard[row][col] = 0;
-                return [row][col];
+                return [row, col];
             }
             gameboard[row][col] = 0;
         }
