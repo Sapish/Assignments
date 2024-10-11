@@ -76,8 +76,6 @@ if (position !== -1) {
 
 
 
-
-
 /* -----------------------------------------------------------------------------
     Task: C
 
@@ -87,9 +85,17 @@ if (position !== -1) {
 */
 console.log("Task: C");
 
+const fruits = ["apple", "kiwi", "banana", "pineapple", "blueberry", "strawberry"];
 
+const fruitsStartingWithTheLetterB = [];
 
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i].startsWith("b")) {
+        fruitsStartingWithTheLetterB.push(fruits[i]);
+    }
+}
 
+console.log(fruitsStartingWithTheLetterB);
 
 
 
