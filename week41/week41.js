@@ -130,3 +130,17 @@ console.log("Task: E");
 
 const A = [1, 4, 5, "Bananas", true, 3.14, 9.81];
 const B = [1, 3.14, 5, 9.81, true, 4, "Bananas"];
+
+let listsThatContainTheSameThings = true;
+
+for (let i = 0; i < A.length; i++) {
+    if (!B.includes(A[i])) {
+        listsThatContainTheSameThings = false;
+    }
+}
+
+if (listsThatContainTheSameThings) {
+    console.log("Both list have the same values, but in different orders");
+} else {
+    console.log("The lists do not have the same values.")
+}
