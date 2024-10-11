@@ -107,8 +107,17 @@ console.log(fruitsStartingWithTheLetterB);
 */
 console.log("Task: D");
 
+const fruits = ["apple", "kiwi", "banana", "pineapple", "blueberry", "strawberry"];
 
+let setTotal = 0;
 
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i].length > 8) {
+        setTotal++;
+    }
+}
+
+console.log("Fruits with more than 8 letters: ", setTotal);
 
 
 
