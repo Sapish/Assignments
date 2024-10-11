@@ -60,7 +60,19 @@ console.log("Task: B");
 
 const fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi', 'mango', 'pineapple', 'pear', 'peach', 'plum', 'watermelon', 'blueberry', 'raspberry', 'blackberry', 'strawberry', 'cherry', 'lemon', 'lime', 'pomegranate', 'apricot'];
 
+let position = -1;
 
+for (let i = 0; i < fruits.length && position === -1; i++) {
+    if (fruits[i] === 'raspberry') {
+        position = i;
+    }
+}
+
+if (position !== -1) {
+    console.log('Raspberry is in position' + position);
+} else {
+    console.log('Raspberry is not in the list');
+}
 
 
 
