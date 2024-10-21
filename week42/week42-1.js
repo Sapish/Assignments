@@ -116,10 +116,21 @@ let shift = 6
 */
 console.log("Task: D");
 
+function getPairWithTargetSum(list, targetSum) {
+    for (let firstIndex = 0; firstIndex < list.length; firstIndex++) {
+        for (let secondIndex = firstIndex + 1; secondIndex < list.length; secondIndex++) {
+            if (list[firstIndex] + list[secondIndex] === targetSum) {
+                return [list[firstIndex], list[secondIndex]];
+            }
+        }
+    }
+    return null;
+}
 const numbers = [1, 23, 14, 56, 42, 33, 0, 3];
 const target = 36;
 
-
+const result = getPairWithTargetSum(numbers, target);
+console.log(result);
 
 
 /* -----------------------------------------------------------------------------
