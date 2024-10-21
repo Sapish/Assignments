@@ -141,3 +141,10 @@ console.log(result);
     42693 -> 5
 */
 console.log("Task: E");
+
+function returnNumberOfDigits(number) {
+    const digitString = number.toString();
+    return digitString.length;
+}
+
+console.log(returnNumberOfDigits(1234));
