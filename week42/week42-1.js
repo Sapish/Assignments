@@ -54,6 +54,14 @@ console.log(result);
 */
 console.log("Task: B");
 
+function createArray(n, m) {
+    let resultArray = [];
+
+    for (let i = n; i < m; i++) {
+        resultArray.push(i);
+    }
+    return resultArray;
+}
 
 
 /* -----------------------------------------------------------------------------
