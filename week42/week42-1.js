@@ -63,6 +63,28 @@ function createArray(n, m) {
     return resultArray;
 }
 
+let array1 = createArray(5, 11);
+let array2 = createArray(8, 23);
+
+function combineTwoArrays(array1, array2) {
+    let combinedArrays = [];
+
+    for (let i = 0; i < array1.length; i++) {
+        if (!combinedArrays.includes(array1[i])) {
+            combinedArrays.push(array1[i]);
+        }
+    }
+
+    for (let i = 0; i < array2.length; i++) {
+        if (!combinedArrays.includes(array2[i])) {
+            combinedArrays.push(array2[i]);
+        }
+    }
+    return combinedArrays;
+}
+
+let resultCombined = combineTwoArrays(array1, array2);
+console.log(resultCombined);
 
 /* -----------------------------------------------------------------------------
     Task: C
