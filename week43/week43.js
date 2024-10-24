@@ -66,6 +66,32 @@ drawTree(5);
 */
 console.log("Task: B");
 
+function drawArrow(size) {
+    for (let i = 1; i <= size; i++) {
+        let stars = '';
+
+    for (let j = 1; j <= i; j++) {
+        stars += '*';
+        if (j < i) {
+            stars += ' ';
+        }
+    }
+    console.log(stars);
+    }
+
+for (let i = size - 1; i >= 1; i--) {
+    let stars = '';
+
+    for (let j = 1; j <= i; j++) {
+        stars += '*';
+        if (j < i) {
+            stars += ' ';
+        }
+    }
+    console.log(stars);
+  }
+}
+drawArrow(3);
 /* -----------------------------------------------------------------------------
     Task: C
     Write a function that draws a box of n by m dimensions. Take into acount the diffrence in aspectratio.
