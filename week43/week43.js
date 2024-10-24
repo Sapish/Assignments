@@ -104,6 +104,27 @@ drawArrow(3);
 */
 console.log("Task: C");
 
+function drawBox(n, m) {
+    let corners = '+';
+    for (let i = 0; i < m; i++) {
+        corners += '-';
+    }
+    corners += '+';
+    console.log(corners);
+
+    for (let i = 0; i < n - 2; i++) {
+        let pillar ='|';
+        for (let j = 0; j < m; j++) {
+            pillar += ' ';
+        }
+        pillar += '|';
+        console.log(pillar);
+    }
+    if (n > 1) {
+        console.log(corners);
+    }
+}
+drawBox(3, 5);
 
 
 /* -----------------------------------------------------------------------------
