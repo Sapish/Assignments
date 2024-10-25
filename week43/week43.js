@@ -133,7 +133,20 @@ drawBox(3, 5);
 */
 console.log("Task: D");
 
+function checkIfHeterogram(word) {
+    const makeWordLowercase = word.toLowerCase();
 
+    for (let i = 0; i < makeWordLowercase.length; i++) {
+        for (let j = i + 1; j < makeWordLowercase.length; j++) {
+            if (makeWordLowercase[i] === makeWordLowercase[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+console.log(checkIfHeterogram("game"));
+console.log(checkIfHeterogram("troll"));
 
 /* -----------------------------------------------------------------------------
     Task: E
