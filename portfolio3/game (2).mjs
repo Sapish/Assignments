@@ -40,7 +40,7 @@ function checkResolution(){
 function update() {
     currentState.update(GAME_FPS);
     currentState.draw(GAME_FPS);
-    
+
     if (currentState.transitionTo != null) {
         currentState = currentState.next;
         print(ANSI.CLEAR_SCREEN, ANSI.CURSOR_HOME);
@@ -55,28 +55,28 @@ function buildMenu() {
         {
             text: "Start Game", id: menuItemCount++, action: function () {
                 clearScreen();
-                let innbetween = createInnBetweenScreen();
-                innbetween.init(`SHIP PLACMENT\nFirst player get ready.\nPlayer two look away`, () => {
+                let inBetween = createInnBetweenScreen();
+                inBetween.init(`SHIP PLACEMENT\nFirst player get ready.\nPlayer two look away`, () => {
 
                     let p1map = createMapLayoutScreen();
                     p1map.init(FIRST_PLAYER, (player1ShipMap) => {
 
 
-                        let innbetween = createInnBetweenScreen();
-                        innbetween.init(`SHIP PLACMENT\nSecond player get ready.\nPlayer one look away`, () => {
+                        let inBetween = createInnBetweenScreen();
+                        inBetween.init(`SHIP PLACEMENT\nSecond player get ready.\nPlayer one look away`, () => {
                             let p2map = createMapLayoutScreen();
                             p2map.init(SECOND_PLAYER, (player2ShipMap) => {
                                 return createBattleshipScreen(player1ShipMap, player2ShipMap);
                             })
                             return p2map;
                         });
-                        return innbetween;
+                        return inBetween;
                     });
 
                     return p1map;
 
                 }, 3);
-                currentState.next = innbetween;
+                currentState.next = inBetween;
                 currentState.transitionTo = "Map layout";
             }
         },
