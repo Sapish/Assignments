@@ -3,7 +3,7 @@ import { print } from "../utils/io.mjs";
 
 
 
-const creteBatleshipScreen = () => {
+const createBattleshipScreen = () => {
 
     let currentPlayer = FIRST_PLAYER;
     let firstPlayerBoard = null;
@@ -14,10 +14,10 @@ const creteBatleshipScreen = () => {
         currentPlayer *= -1;
         if (currentPlayer == FIRST_PLAYER) {
             currentBoard = firstPlayerBoard;
-            oponentBoard = secondPlayerBoard;
+            opponentBoard = secondPlayerBoard;
         } else {
             currentBoard = secondPlayerBoard;
-            oponentBoard = firstPlayerBoard;
+            opponentBoard = firstPlayerBoard;
         }
     }
 
@@ -52,4 +52,4 @@ const creteBatleshipScreen = () => {
     }
 }
 
-export default creteBatleshipScreen;
+export default createBattleshipScreen;
