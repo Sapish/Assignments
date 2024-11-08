@@ -8,8 +8,8 @@ import createInnBetweenScreen from "./game/innbetweenScreen.mjs";
 import createBattleshipScreen from "./game/battleshipsScreen.mjs";
 
 const MAIN_MENU_ITEMS = buildMenu();
-const MIN_HEIGHT = 600;
-const MIN_WIDTH = 800;
+const MIN_HEIGHT = 24;
+const MIN_WIDTH = 80;
 
 const GAME_FPS = 1000 / 60; // The theoretical refresh rate of our game engine
 let currentState = null;    // The current active state in our finite-state machine.
@@ -18,8 +18,11 @@ let gameLoop = null;        // Variable that keeps a reference to the interval i
 let mainMenuScene = null;
 
 function checkResolution(){
-    if (window.innerWidth < MIN_WIDTH || window.innerHeight < MIN_HEIGHT) {
-        console.log("Please increase resolution to start the game.");
+    const width = process.stdout.columns;
+    const height = process.stdout.rows;
+
+    if (width < MIN_WIDTH || height < MIN_HEIGHT) {
+        console.log("Increase terminal size to start the game.");
         return false;
     }
     return true;

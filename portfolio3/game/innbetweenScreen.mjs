@@ -1,4 +1,4 @@
-import { print, printCentered as printCentered } from "../utils/io.mjs";
+import { print, printCenterd as printCenterd } from "../utils/io.mjs";
 
 function createInnBetweenScreen() {
     return {
@@ -27,7 +27,7 @@ function createInnBetweenScreen() {
         draw: function (dr) {
             if (this.isDrawn == false) {
                 this.isDrawn = true;
-                printCentered(this.text);
+                printCenterd(this.text);
             }
         }
     }
