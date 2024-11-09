@@ -10,12 +10,12 @@ import createBattleshipScreen from "./game/battleshipsScreen.mjs";
 const MAIN_MENU_ITEMS = buildMenu();
 const MIN_HEIGHT = 24;
 const MIN_WIDTH = 80;
-
 const GAME_FPS = 1000 / 60; // The theoretical refresh rate of our game engine
 let currentState = null;    // The current active state in our finite-state machine.
 let gameLoop = null;        // Variable that keeps a reference to the interval id assigned to our game loop 
-
 let mainMenuScene = null;
+
+
 
 function checkResolution(){
     const width = process.stdout.columns;
