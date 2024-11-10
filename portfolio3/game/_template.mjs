@@ -10,7 +10,7 @@ const NAME = {
     },
 
     update: function (dt) {
-        //this.isDrawn = false;
+    
     },
 
     draw: function (dr) {

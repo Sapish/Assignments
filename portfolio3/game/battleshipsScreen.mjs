@@ -35,7 +35,7 @@ const createBattleshipScreen = () => {
         },
 
         update: function (dt) {
-            //this.isDrawn = false;
+        
         },
 
         draw: function (dr) {
