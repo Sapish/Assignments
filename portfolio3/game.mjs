@@ -15,7 +15,6 @@ let currentState = null;
 let gameLoop = null;
 let mainMenuScene = null;
 
-
 function buildMenu() {
 
     const LANGUAGES = {
@@ -46,6 +45,7 @@ function buildMenu() {
             resAlert: "Øk terminalstørrelsen for å starte spillet."
         }
     };
+    
     let currentLanguage = LANGUAGES.en;
     let menuItemCount = 0;
     return [
